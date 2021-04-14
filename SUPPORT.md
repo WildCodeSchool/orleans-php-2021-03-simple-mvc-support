@@ -54,9 +54,9 @@ Tu te rends compte qu'il y a déjà un **AbstractManager** qui possède déjà u
 
 On approche de la fin! Il ne nous reste plus qu'à envoyer nos données dans notre vue.
 
-Pour cela, il faut déjà que l'on dise à notre contrôleur qu'on aura besoin d'utiliser le **PetManager**. Pour cela, il faut d'abord que tu ajoute un ```use``` dans ton **PetController** avec le nom complètement qualifié de ta classe **PetManager** (à toi de le retrouver!).
+Pour cela, il faut déjà que l'on dise à notre contrôleur qu'on aura besoin d'utiliser le **PetManager**. Il faut donc d'abord que tu ajoutes un ```use``` dans ton **PetController** avec le nom complètement qualifié de ta classe **PetManager** (à toi de le retrouver!).
 
-Ensuite, dans ta méthode index, tu peux instancier un nouveau PetManager, et lui appliquer la méthode ```selectAll()``` pour récupérer tous tes animaux de compagnie dans ta base de donnée, et stocker le tableau résultant de cette requête dans une variable commodément nommée ```$pets```, par exemple.
+Ensuite, dans ta méthode index, tu peux instancier un nouveau PetManager, et lui appliquer la méthode ```selectAll()``` pour récupérer tous tes animaux de compagnie dans ta base de donnée, et stocker le tableau résultant de cette requête dans une variable commodément nommée ```$pets```, par exemple. Tu peux vérifier si ta requête s'est bien passée en faisant ```var_dump($pets);die;```.
 
 Enfin, pour injecter tes animaux dans ta vue (ça paraît violent dit comme ça mais pas d'inquiétude, tout va bien se passer 👌), il faut que tu ajoute un deuxième argument à ta méthode ```render()```, sous la forme d'un tableau associatif. Ce tableau prend la forme suivante :
 ```
@@ -71,7 +71,7 @@ Ici, ce tableau n'aura qu'une ligne, puisque la seule variable que nous voulons 
 
 Une fois que tu as bien ajouté ce qu'il faut dans l'appel de la méthode ```render()```, tu devrais avoir accès à ```$pets``` dans ta vue, sous le nom que tu lui a donné pour twig (donc très probablement ```pets``` 🙃).
 
-Tu peux donc faire un simple dump dans twig pour vérifier que tu récupères bien tes animaux du côté de la vue. Si tu récupères bien tous tes animaux, c'est bon! Plus qu'à mettre en page à ta sauce pour afficher les informations de chacun de tes animaux de compagnie trop mignons! 🐈
+Tu peux donc faire un simple dump dans twig pour vérifier que tu récupères bien tes animaux du côté de la vue. Si tu as le même résultat que lorsque tu as fais ton ```var_dump()``` de ```$pets``` dans le contrôleur, c'est que tu récupères bien tous tes animaux, et c'est bon! Plus qu'à mettre en page à ta sauce pour afficher les informations de chacun de tes animaux de compagnie trop mignons! 🐈
 
 > Note : pour faire un dump de ```pets``` dans Twig :
 ```twig
