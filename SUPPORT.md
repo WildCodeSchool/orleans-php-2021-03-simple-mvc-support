@@ -28,6 +28,6 @@ Le Simple MVC est un framework "maison" relativement facile à prendre en main q
 
 > Note : n'oublie pas de configurer ton db.php avec les informations de connexion à ton serveur MySQL ❗.
 
-#### Le but : afficher tes aniomaux de compagnie par espèces
+#### Le but : afficher tes animaux de compagnie par espèces
 
 À partir du code fourni, affiche tous tes animaux de compagnie dans ```Pet/index.html.twig```, à la route ```pet/index```, en les triant par espèce!
