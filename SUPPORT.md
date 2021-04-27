@@ -8,7 +8,7 @@ Le Simple MVC est un framework "maison" relativement facile à prendre en main q
 
 #### Avant de commencer : les prérequis
 
-1. Clone [le repo Github du Simple MVC](https://github.com/WildCodeSchool/simple-mvc) sur ta machine
+1. Clone [ce repo Github](https://github.com/WildCodeSchool/orleans-php-2021-03-simple-mvc-support/tree/part-2) sur ta machine.
 
 2. Dans ton serveur MySQL, créé une database qui contient une table *"species"* (= espèce) avec 2 champs :
 
