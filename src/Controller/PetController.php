@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Model\PetManager;
+use App\Model\SpeciesManager;
 
 class PetController extends AbstractController
 {
@@ -12,9 +13,15 @@ class PetController extends AbstractController
     public function index(): string
     {
         $petManager = new PetManager();
-        $pets = $petManager->selectAll();
+        $species = (new SpeciesManager())->selectAll();
+        $petSpecies = [];
+
+        foreach ($species as $specie) {
+            $petSpecies[$specie['name']] = $petManager->selectAllBySpecies($specie['name']);
+        }
+
         return $this->twig->render('Pet/index.html.twig', [
-            'pets' => $pets,
+            'petSpecies' => $petSpecies,
         ]);
     }
 }
